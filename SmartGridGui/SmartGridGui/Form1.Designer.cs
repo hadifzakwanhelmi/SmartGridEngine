@@ -39,25 +39,25 @@
             this.tssSources = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssStability = new System.Windows.Forms.ToolStripStatusLabel();
             this.grpAddSource = new System.Windows.Forms.GroupBox();
-            this.cmbType = new System.Windows.Forms.ComboBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.nudCapacity = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.nudPanelEfficiency = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.nudSunlight = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.nudWindSpeed = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.nudBladeLength = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.nudMaxCapacity = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.nudCharge = new System.Windows.Forms.NumericUpDown();
-            this.chkActive = new System.Windows.Forms.CheckBox();
-            this.btnAddSource = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnAddSource = new System.Windows.Forms.Button();
+            this.chkActive = new System.Windows.Forms.CheckBox();
+            this.nudCharge = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.nudMaxCapacity = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.nudBladeLength = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.nudWindSpeed = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nudSunlight = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.nudPanelEfficiency = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nudCapacity = new System.Windows.Forms.NumericUpDown();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.cmbType = new System.Windows.Forms.ComboBox();
             this.lvSources = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -75,16 +75,17 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.btnDisconnect = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.grpAddSource.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCapacity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPanelEfficiency)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSunlight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudWindSpeed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeLength)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMaxCapacity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCharge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMaxCapacity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeLength)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWindSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSunlight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPanelEfficiency)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCapacity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDemand)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +97,8 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(882, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(662, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -106,19 +108,19 @@
             this.exportJSONToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.fileToolStripMenuItem.Text = "File ";
             // 
             // exportJSONToolStripMenuItem
             // 
             this.exportJSONToolStripMenuItem.Name = "exportJSONToolStripMenuItem";
-            this.exportJSONToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exportJSONToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.exportJSONToolStripMenuItem.Text = "Export JSON";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // helpToolStripMenuItem
@@ -126,13 +128,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // statusStrip1
@@ -141,23 +143,24 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssSources,
             this.tssStability});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 547);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 444);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(882, 26);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(662, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // tssSources
             // 
             this.tssSources.Name = "tssSources";
-            this.tssSources.Size = new System.Drawing.Size(75, 20);
+            this.tssSources.Size = new System.Drawing.Size(60, 17);
             this.tssSources.Text = "Sources: 0";
             this.tssSources.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // tssStability
             // 
             this.tssStability.Name = "tssStability";
-            this.tssStability.Size = new System.Drawing.Size(76, 20);
+            this.tssStability.Size = new System.Drawing.Size(60, 17);
             this.tssStability.Text = "Stability: -";
             // 
             // grpAddSource
@@ -181,12 +184,226 @@
             this.grpAddSource.Controls.Add(this.nudCapacity);
             this.grpAddSource.Controls.Add(this.txtName);
             this.grpAddSource.Controls.Add(this.cmbType);
-            this.grpAddSource.Location = new System.Drawing.Point(0, 31);
+            this.grpAddSource.Location = new System.Drawing.Point(0, 25);
+            this.grpAddSource.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpAddSource.Name = "grpAddSource";
-            this.grpAddSource.Size = new System.Drawing.Size(370, 460);
+            this.grpAddSource.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpAddSource.Size = new System.Drawing.Size(278, 374);
             this.grpAddSource.TabIndex = 2;
             this.grpAddSource.TabStop = false;
             this.grpAddSource.Text = "Add Power Source";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(93, 335);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(70, 19);
+            this.btnClear.TabIndex = 18;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            // 
+            // btnAddSource
+            // 
+            this.btnAddSource.Location = new System.Drawing.Point(9, 335);
+            this.btnAddSource.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddSource.Name = "btnAddSource";
+            this.btnAddSource.Size = new System.Drawing.Size(70, 19);
+            this.btnAddSource.TabIndex = 17;
+            this.btnAddSource.Text = "Add Source";
+            this.btnAddSource.UseVisualStyleBackColor = true;
+            // 
+            // chkActive
+            // 
+            this.chkActive.AutoSize = true;
+            this.chkActive.Location = new System.Drawing.Point(10, 306);
+            this.chkActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkActive.Name = "chkActive";
+            this.chkActive.Size = new System.Drawing.Size(56, 17);
+            this.chkActive.TabIndex = 16;
+            this.chkActive.Text = "Active";
+            this.chkActive.UseVisualStyleBackColor = true;
+            // 
+            // nudCharge
+            // 
+            this.nudCharge.DecimalPlaces = 2;
+            this.nudCharge.Location = new System.Drawing.Point(129, 270);
+            this.nudCharge.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudCharge.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudCharge.Name = "nudCharge";
+            this.nudCharge.Size = new System.Drawing.Size(90, 20);
+            this.nudCharge.TabIndex = 15;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 275);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(113, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Current Charge (kWh):";
+            // 
+            // nudMaxCapacity
+            // 
+            this.nudMaxCapacity.DecimalPlaces = 2;
+            this.nudMaxCapacity.Location = new System.Drawing.Point(129, 234);
+            this.nudMaxCapacity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudMaxCapacity.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudMaxCapacity.Name = "nudMaxCapacity";
+            this.nudMaxCapacity.Size = new System.Drawing.Size(90, 20);
+            this.nudMaxCapacity.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 239);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Max Capacity (kWh):";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // nudBladeLength
+            // 
+            this.nudBladeLength.DecimalPlaces = 2;
+            this.nudBladeLength.Location = new System.Drawing.Point(129, 204);
+            this.nudBladeLength.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudBladeLength.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudBladeLength.Name = "nudBladeLength";
+            this.nudBladeLength.Size = new System.Drawing.Size(90, 20);
+            this.nudBladeLength.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 206);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(90, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Blade Length (m):";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // nudWindSpeed
+            // 
+            this.nudWindSpeed.DecimalPlaces = 2;
+            this.nudWindSpeed.Location = new System.Drawing.Point(129, 171);
+            this.nudWindSpeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudWindSpeed.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudWindSpeed.Name = "nudWindSpeed";
+            this.nudWindSpeed.Size = new System.Drawing.Size(90, 20);
+            this.nudWindSpeed.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 172);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(96, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Wind Speed (m/s):";
+            // 
+            // nudSunlight
+            // 
+            this.nudSunlight.DecimalPlaces = 2;
+            this.nudSunlight.Location = new System.Drawing.Point(129, 142);
+            this.nudSunlight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudSunlight.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudSunlight.Name = "nudSunlight";
+            this.nudSunlight.Size = new System.Drawing.Size(90, 20);
+            this.nudSunlight.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 142);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Sunlight (lux):";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // nudPanelEfficiency
+            // 
+            this.nudPanelEfficiency.DecimalPlaces = 2;
+            this.nudPanelEfficiency.Location = new System.Drawing.Point(129, 110);
+            this.nudPanelEfficiency.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudPanelEfficiency.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudPanelEfficiency.Name = "nudPanelEfficiency";
+            this.nudPanelEfficiency.Size = new System.Drawing.Size(90, 20);
+            this.nudPanelEfficiency.TabIndex = 5;
+            this.nudPanelEfficiency.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 110);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Panel Efficiency (%):";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 80);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Capacity (kW):";
+            // 
+            // nudCapacity
+            // 
+            this.nudCapacity.DecimalPlaces = 2;
+            this.nudCapacity.Location = new System.Drawing.Point(129, 80);
+            this.nudCapacity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudCapacity.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudCapacity.Name = "nudCapacity";
+            this.nudCapacity.Size = new System.Drawing.Size(90, 20);
+            this.nudCapacity.TabIndex = 2;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(10, 42);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(76, 20);
+            this.txtName.TabIndex = 1;
+            this.txtName.Text = "Name:";
             // 
             // cmbType
             // 
@@ -196,204 +413,11 @@
             "Solar Panel",
             "Wind Turbine",
             "Battery Storage"});
-            this.cmbType.Location = new System.Drawing.Point(12, 21);
+            this.cmbType.Location = new System.Drawing.Point(9, 17);
+            this.cmbType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(121, 24);
+            this.cmbType.Size = new System.Drawing.Size(92, 21);
             this.cmbType.TabIndex = 0;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(13, 52);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 22);
-            this.txtName.TabIndex = 1;
-            this.txtName.Text = "Name:";
-            // 
-            // nudCapacity
-            // 
-            this.nudCapacity.DecimalPlaces = 2;
-            this.nudCapacity.Location = new System.Drawing.Point(172, 99);
-            this.nudCapacity.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.nudCapacity.Name = "nudCapacity";
-            this.nudCapacity.Size = new System.Drawing.Size(120, 22);
-            this.nudCapacity.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 99);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Capacity (kW):";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 135);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Panel Efficiency (%):";
-            // 
-            // nudPanelEfficiency
-            // 
-            this.nudPanelEfficiency.DecimalPlaces = 2;
-            this.nudPanelEfficiency.Location = new System.Drawing.Point(172, 135);
-            this.nudPanelEfficiency.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.nudPanelEfficiency.Name = "nudPanelEfficiency";
-            this.nudPanelEfficiency.Size = new System.Drawing.Size(120, 22);
-            this.nudPanelEfficiency.TabIndex = 5;
-            this.nudPanelEfficiency.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 175);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Sunlight (lux):";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // nudSunlight
-            // 
-            this.nudSunlight.DecimalPlaces = 2;
-            this.nudSunlight.Location = new System.Drawing.Point(172, 175);
-            this.nudSunlight.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.nudSunlight.Name = "nudSunlight";
-            this.nudSunlight.Size = new System.Drawing.Size(120, 22);
-            this.nudSunlight.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 212);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 16);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Wind Speed (m/s):";
-            // 
-            // nudWindSpeed
-            // 
-            this.nudWindSpeed.DecimalPlaces = 2;
-            this.nudWindSpeed.Location = new System.Drawing.Point(172, 210);
-            this.nudWindSpeed.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.nudWindSpeed.Name = "nudWindSpeed";
-            this.nudWindSpeed.Size = new System.Drawing.Size(120, 22);
-            this.nudWindSpeed.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 253);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 16);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Blade Length (m):";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // nudBladeLength
-            // 
-            this.nudBladeLength.DecimalPlaces = 2;
-            this.nudBladeLength.Location = new System.Drawing.Point(172, 251);
-            this.nudBladeLength.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.nudBladeLength.Name = "nudBladeLength";
-            this.nudBladeLength.Size = new System.Drawing.Size(120, 22);
-            this.nudBladeLength.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 294);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 16);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Max Capacity (kWh):";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // nudMaxCapacity
-            // 
-            this.nudMaxCapacity.DecimalPlaces = 2;
-            this.nudMaxCapacity.Location = new System.Drawing.Point(172, 288);
-            this.nudMaxCapacity.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.nudMaxCapacity.Name = "nudMaxCapacity";
-            this.nudMaxCapacity.Size = new System.Drawing.Size(120, 22);
-            this.nudMaxCapacity.TabIndex = 13;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 338);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(137, 16);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Current Charge (kWh):";
-            // 
-            // nudCharge
-            // 
-            this.nudCharge.DecimalPlaces = 2;
-            this.nudCharge.Location = new System.Drawing.Point(172, 332);
-            this.nudCharge.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.nudCharge.Name = "nudCharge";
-            this.nudCharge.Size = new System.Drawing.Size(120, 22);
-            this.nudCharge.TabIndex = 15;
-            // 
-            // chkActive
-            // 
-            this.chkActive.AutoSize = true;
-            this.chkActive.Location = new System.Drawing.Point(13, 377);
-            this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(66, 20);
-            this.chkActive.TabIndex = 16;
-            this.chkActive.Text = "Active";
-            this.chkActive.UseVisualStyleBackColor = true;
-            // 
-            // btnAddSource
-            // 
-            this.btnAddSource.Location = new System.Drawing.Point(12, 412);
-            this.btnAddSource.Name = "btnAddSource";
-            this.btnAddSource.Size = new System.Drawing.Size(94, 23);
-            this.btnAddSource.TabIndex = 17;
-            this.btnAddSource.Text = "Add Source";
-            this.btnAddSource.UseVisualStyleBackColor = true;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(124, 412);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(94, 23);
-            this.btnClear.TabIndex = 18;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
             // 
             // lvSources
             // 
@@ -407,10 +431,11 @@
             this.lvSources.FullRowSelect = true;
             this.lvSources.GridLines = true;
             this.lvSources.HideSelection = false;
-            this.lvSources.Location = new System.Drawing.Point(390, 40);
+            this.lvSources.Location = new System.Drawing.Point(292, 32);
+            this.lvSources.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lvSources.MultiSelect = false;
             this.lvSources.Name = "lvSources";
-            this.lvSources.Size = new System.Drawing.Size(480, 320);
+            this.lvSources.Size = new System.Drawing.Size(361, 261);
             this.lvSources.TabIndex = 3;
             this.lvSources.UseCompatibleStateImageBehavior = false;
             this.lvSources.View = System.Windows.Forms.View.Details;
@@ -448,9 +473,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(387, 378);
+            this.label8.Location = new System.Drawing.Point(290, 307);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(127, 16);
+            this.label8.Size = new System.Drawing.Size(103, 13);
             this.label8.TabIndex = 19;
             this.label8.Text = "Load Demand (kW):";
             this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -459,23 +485,25 @@
             // 
             this.lblTotalGen.AutoSize = true;
             this.lblTotalGen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalGen.Location = new System.Drawing.Point(387, 408);
+            this.lblTotalGen.Location = new System.Drawing.Point(290, 332);
+            this.lblTotalGen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalGen.Name = "lblTotalGen";
-            this.lblTotalGen.Size = new System.Drawing.Size(189, 16);
+            this.lblTotalGen.Size = new System.Drawing.Size(162, 13);
             this.lblTotalGen.TabIndex = 20;
             this.lblTotalGen.Text = "Total Generation : 0.00 kW";
             // 
             // nudDemand
             // 
             this.nudDemand.DecimalPlaces = 2;
-            this.nudDemand.Location = new System.Drawing.Point(520, 376);
+            this.nudDemand.Location = new System.Drawing.Point(390, 306);
+            this.nudDemand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudDemand.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.nudDemand.Name = "nudDemand";
-            this.nudDemand.Size = new System.Drawing.Size(120, 22);
+            this.nudDemand.Size = new System.Drawing.Size(90, 20);
             this.nudDemand.TabIndex = 19;
             // 
             // contextMenuStrip1
@@ -486,63 +514,80 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(667, 371);
+            this.btnStart.Location = new System.Drawing.Point(500, 301);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(94, 23);
+            this.btnStart.Size = new System.Drawing.Size(70, 19);
             this.btnStart.TabIndex = 19;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(667, 406);
+            this.btnStop.Location = new System.Drawing.Point(500, 330);
+            this.btnStop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(94, 23);
+            this.btnStop.Size = new System.Drawing.Size(70, 19);
             this.btnStop.TabIndex = 19;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
             // 
             // btnEvaluate
             // 
-            this.btnEvaluate.Location = new System.Drawing.Point(667, 443);
+            this.btnEvaluate.Location = new System.Drawing.Point(500, 360);
+            this.btnEvaluate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEvaluate.Name = "btnEvaluate";
-            this.btnEvaluate.Size = new System.Drawing.Size(94, 23);
+            this.btnEvaluate.Size = new System.Drawing.Size(70, 19);
             this.btnEvaluate.TabIndex = 19;
             this.btnEvaluate.Text = "Evaluate Stability";
             this.btnEvaluate.UseVisualStyleBackColor = true;
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(776, 371);
+            this.btnConnect.Location = new System.Drawing.Point(582, 301);
+            this.btnConnect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(94, 23);
+            this.btnConnect.Size = new System.Drawing.Size(70, 19);
             this.btnConnect.TabIndex = 22;
             this.btnConnect.Text = "Connect Grid";
             this.btnConnect.UseVisualStyleBackColor = true;
             // 
             // btnDisconnect
             // 
-            this.btnDisconnect.Location = new System.Drawing.Point(776, 405);
+            this.btnDisconnect.Location = new System.Drawing.Point(582, 329);
+            this.btnDisconnect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDisconnect.Name = "btnDisconnect";
-            this.btnDisconnect.Size = new System.Drawing.Size(94, 23);
+            this.btnDisconnect.Size = new System.Drawing.Size(70, 19);
             this.btnDisconnect.TabIndex = 23;
             this.btnDisconnect.Text = "Disconnect";
             this.btnDisconnect.UseVisualStyleBackColor = true;
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(776, 443);
+            this.btnExport.Location = new System.Drawing.Point(500, 393);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(94, 23);
+            this.btnExport.Size = new System.Drawing.Size(70, 19);
             this.btnExport.TabIndex = 24;
             this.btnExport.Text = "Export JSON";
             this.btnExport.UseVisualStyleBackColor = true;
             // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(581, 360);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(70, 19);
+            this.btnRemove.TabIndex = 26;
+            this.btnRemove.Text = " Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 573);
+            this.ClientSize = new System.Drawing.Size(662, 466);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnDisconnect);
             this.Controls.Add(this.btnConnect);
@@ -557,6 +602,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Smart Grid & Renewable Energy Monitoring";
@@ -566,13 +612,13 @@
             this.statusStrip1.PerformLayout();
             this.grpAddSource.ResumeLayout(false);
             this.grpAddSource.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCapacity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPanelEfficiency)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSunlight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudWindSpeed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeLength)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMaxCapacity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCharge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMaxCapacity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeLength)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWindSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSunlight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPanelEfficiency)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCapacity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDemand)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -627,6 +673,7 @@
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Button btnDisconnect;
         private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Button btnRemove;
     }
 }
 

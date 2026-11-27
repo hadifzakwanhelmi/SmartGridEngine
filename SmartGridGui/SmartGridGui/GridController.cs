@@ -20,6 +20,10 @@ namespace SmartGridEngine.Services
         {
             sources.Add(source);
         }
+        public bool RemoveSource(PowerSource source)
+        {
+            return sources.Remove(source);
+        }
 
         public double GetTotalGeneration()
         {

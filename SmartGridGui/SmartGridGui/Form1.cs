@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using SmartGridEngine.Models;
 using SmartGridEngine.Services;
+using SmartGridEngine.Data;
 
 namespace SmartGridGui
 {
@@ -27,6 +28,7 @@ namespace SmartGridGui
             btnEvaluate.Click += btnEvaluate_Click;
             btnExport.Click += btnExport_Click;
             nudDemand.ValueChanged += nudDemand_ValueChanged;
+            btnRemove.Click += btnRemove_Click;
 
             var fileMenu = (ToolStripMenuItem)menuStrip1.Items[0];
             fileMenu.DropDownItems[0].Click += (s, e) => ExportJson();
@@ -41,6 +43,8 @@ namespace SmartGridGui
             cmbType.SelectedIndex = 0;                              // start on "Solar Panel"
             nudDemand.Value = (decimal)controller.TotalLoadDemandKw; // engine default: 300 kW
             UpdateTypeFields();
+            foreach (var s in GridRepository.LoadAllSources())
+                controller.RegisterSource(s);
             RefreshList();
         }
 
@@ -115,6 +119,7 @@ namespace SmartGridGui
 
             controller.RegisterSource(source);
             if (chkActive.Checked) source.StartGeneration();
+            GridRepository.SaveSource(source);
 
             RefreshList();
             ClearForm();
@@ -237,12 +242,27 @@ namespace SmartGridGui
         {
             controller.TotalLoadDemandKw = (double)nudDemand.Value;
             bool stable = controller.EvaluateGridStability();
+            GridRepository.SaveReading(controller.GetTotalGeneration(), controller.TotalLoadDemandKw, stable);
             RefreshDashboard();
             MessageBox.Show(
                 "Total generation: " + controller.GetTotalGeneration().ToString("F2") + " kW\n" +
                 "Load demand: " + controller.TotalLoadDemandKw.ToString("F2") + " kW\n" +
                 "Grid is " + (stable ? "STABLE" : "UNSTABLE"),
                 "Grid Stability");
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            var s = GetSelectedSource();
+            if (s == null) return;
+
+            if (MessageBox.Show("Remove " + s.Name + "?", "Remove source",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                return;
+
+            controller.RemoveSource(s);        // remove from memory
+            GridRepository.DeleteSource(s.Id); // remove from the database
+            RefreshList();
         }
 
         private void btnExport_Click(object sender, EventArgs e)
